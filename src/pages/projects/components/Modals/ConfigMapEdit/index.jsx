@@ -24,6 +24,7 @@ import { Modal } from 'components/Base'
 import Confirm from 'components/Forms/Base/Confirm'
 import ConfigMapSettings from 'components/Forms/ConfigMap/ConfigMapSettings'
 
+import { toJS } from 'mobx'
 import styles from './index.scss'
 
 export default class ConfigMapEditModal extends React.Component {
