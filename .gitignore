@@ -24,3 +24,6 @@ yarn-error.log*
 *.rdb
 /build
 .cache-loader
+
+.vscode
+.devcontainer
