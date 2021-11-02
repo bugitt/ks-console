@@ -52,4 +52,5 @@ module.exports = {
     '您的密码必须符合如下要求',
 
   CONFIRM_PASSWORD_TIP: '由于您是第一次登录，出于安全考虑请重置您的密码',
+  'Login using cloud platform': '使用云平台登录',
 }
