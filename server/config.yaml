@@ -27,8 +27,8 @@ server:
 
   # backend service gateway server
   apiServer:
-    url: http://ks-apiserver.kubesphere-system.svc
-    wsUrl: ws://ks-apiserver.kubesphere-system.svc
+    url: http://10.251.254.35:31734
+    wsUrl: ws://10.251.254.35:31734
 
   # docker image search default url
   dockerHubUrl: https://hub.docker.com
