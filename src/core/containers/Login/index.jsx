@@ -62,6 +62,10 @@ export default class Login extends Component {
     errorCount: 0,
   }
 
+  handleCloudLogin = () => {
+    window.location.href = `https://scs.buaa.edu.cn/?service=${window.location.origin}/cloud-login`
+  }
+
   handleOAuthLogin = server => e => {
     const info = {
       name: server.title,
@@ -146,6 +150,15 @@ export default class Login extends Component {
               </Button>
             </div>
           </Form>
+          <div className={styles.footer}>
+            <Button
+              type="control"
+              htmlType="submit"
+              onClick={this.handleCloudLogin}
+            >
+              {t('Login using cloud platform')}
+            </Button>
+          </div>
         </div>
       </div>
     )
