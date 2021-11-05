@@ -22,7 +22,7 @@ const isEmpty = require('lodash/isEmpty')
 const isArray = require('lodash/isArray')
 const jwtDecode = require('jwt-decode')
 
-const { send_gateway_request } = require('../libs/request')
+const { send_gateway_request, request } = require('../libs/request')
 
 const { isAppsRoute, safeParseJSON, getServerConfig } = require('../libs/utils')
 
@@ -52,7 +52,7 @@ const handleLoginResp = (resp = {}) => {
   }
 }
 
-const login = async (data, headers) => {
+const login = async (data, headers, cloudLogin) => {
   let clientID = serverConfig.apiServer.clientID
   if (!clientID) {
     clientID = 'kubesphere'
@@ -75,11 +75,19 @@ const login = async (data, headers) => {
     },
     params: {
       ...data,
-      grant_type: 'password',
+      grant_type: cloudLogin ? 'cloud_login' : 'password',
     },
+    isExtra: !!cloudLogin,
   })
 
   return handleLoginResp(resp)
+}
+
+const getCloudAuthentication = async token => {
+  const authList = await request[
+    `get`
+  ](`${serverConfig.cloud.baseUrl}/authentications`, { token })
+  return authList && authList.length > 0 ? authList[0] : {}
 }
 
 const getNewToken = async ctx => {
@@ -370,6 +378,7 @@ const createUser = (params, token) => {
 
 module.exports = {
   login,
+  getCloudAuthentication,
   oAuthLogin,
   getCurrentUser,
   getOAuthInfo,

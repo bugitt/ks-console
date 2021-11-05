@@ -34,6 +34,7 @@ const send_gateway_request = ({
   url,
   params,
   token,
+  isExtra,
   headers = {},
   ...rest
 }) => {
@@ -47,11 +48,11 @@ const send_gateway_request = ({
     }
   }
 
-  return request[method.toLowerCase()](
-    `${serverConfig.apiServer.url}${url}`,
-    params,
-    options
-  )
+  const serverUrl = isExtra
+    ? serverConfig.apiExtraServer.url
+    : serverConfig.apiServer.url
+
+  return request[method.toLowerCase()](`${serverUrl}${url}`, params, options)
 }
 
 const send_dockerhub_request = ({ params, path, headers }) => {
@@ -81,5 +82,6 @@ const send_harbor_request = ({ path }) => {
 module.exports = {
   send_gateway_request,
   send_dockerhub_request,
+  request,
   send_harbor_request,
 }
