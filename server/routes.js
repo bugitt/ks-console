@@ -70,6 +70,7 @@ router
 
   // session
   .post('/login', parseBody, handleLogin)
+  .get('/cloud-login', handleLogin)
   .get('/login', renderLogin)
   .post('/login/confirm', parseBody, handleLoginConfirm)
   .get('/login/confirm', renderLoginConfirm)

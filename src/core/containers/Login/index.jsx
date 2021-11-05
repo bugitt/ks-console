@@ -101,6 +101,17 @@ export default class Login extends Component {
 
   render() {
     const { formData, isSubmmiting, errorMessage } = this.state
+
+    const cloudLoginError = new URLSearchParams(window.location.search).get(
+      'cloud-login-error'
+    )
+
+    const errMsg =
+      errorMessage ||
+      (cloudLoginError
+        ? '账号密码错误。或未激活PaaS平台账号，请前往 https://git.scs.buaa.edu.cn/user/sign_up 激活。'
+        : null)
+
     return (
       <div>
         <a href="/" className={styles.logo}>
@@ -119,11 +130,11 @@ export default class Login extends Component {
               <span>{t('Log In with {title}', { title: server.title })}</span>
             </div>
           ))}
-          {errorMessage && (
+          {errMsg && (
             <Alert
               className="margin-t12 margin-b12"
               type="error"
-              message={t(errorMessage)}
+              message={t(errMsg)}
             />
           )}
           <Form data={formData} onSubmit={this.handleSubmit}>

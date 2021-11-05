@@ -27,8 +27,12 @@ server:
 
   # backend service gateway server
   apiServer:
-    url: http://10.251.254.35:31734
-    wsUrl: ws://10.251.254.35:31734
+    url: http://ks-apiserver
+    wsUrl: http://ks-apiserver
+  apiExtraServer:
+    url: http://ks-apiserver-extra
+  cloud:
+    baseUrl: https://scs.buaa.edu.cn/api/v2
 
   # docker image search default url
   dockerHubUrl: https://hub.docker.com
@@ -50,15 +54,11 @@ client:
 
   # current support lanaguages
   supportLangs:
-    - label: "繁體中文"
-      value: "tc"
     - label: "简体中文"
       value: "zh"
     - label: "English"
       value: "en"
-    - label: "Español"
-      value: "es"
-  defaultLang: "en"
+  defaultLang: "zh"
 
   # platform management navigations
   globalNavs:
