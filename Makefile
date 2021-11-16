@@ -17,7 +17,9 @@ yarn-%:
 
 image:
 	rm -rf build && mkdir -p build
-	rm -rf node_modules
 	docker build -f Dockerfile.multistage . -t harbor.scs.buaa.edu.cn/kubesphere/ks-console-replace
 image-push:
 	docker push harbor.scs.buaa.edu.cn/kubesphere/ks-console-replace
+
+update: image image-push
+	kubectl rollout restart deployment -n kubesphere-system ks-console-replace
