@@ -113,7 +113,7 @@ export default class Login extends Component {
         : null)
 
     return (
-      <div>
+      <div className={styles.cover}>
         <a href="/" className={styles.logo}>
           <img src="/assets/logo.svg" alt="" />
         </a>

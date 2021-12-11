@@ -1,6 +1,11 @@
 @import '~scss/variables';
 @import '~scss/mixins';
 
+.cover {
+  background-size: cover;
+  background-image: url(/src/assets/cover.jpeg);
+}
+
 .logo {
   position: absolute;
   top: 80px;
