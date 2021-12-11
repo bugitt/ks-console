@@ -20,8 +20,6 @@ import React from 'react'
 import classNames from 'classnames'
 import { Icon } from '@kube-design/components'
 
-import { getDocsUrl } from 'utils'
-
 import styles from './index.scss'
 
 export default class Help extends React.Component {
@@ -35,7 +33,7 @@ export default class Help extends React.Component {
         </div>
         <div className={styles.tip}>
           <a
-            href={getDocsUrl('project_members')}
+            href="https://scs.buaa.edu.cn/doc/cloud-labs/cloud/appendix_create_kubernetes/#kubekey%E6%8E%A8%E8%8D%90"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -44,7 +42,7 @@ export default class Help extends React.Component {
         </div>
         <div className={styles.tip}>
           <a
-            href={getDocsUrl('internet')}
+            href="https://scs.buaa.edu.cn/doc/cloud-labs/cloud/appendix_create_kubernetes/#kubekey%E6%8E%A8%E8%8D%90"
             target="_blank"
             rel="noreferrer noopener"
           >
