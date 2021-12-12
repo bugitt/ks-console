@@ -114,12 +114,12 @@ pre {
 }
 
 ::-moz-selection {
-  background: #1890ff;
+  background: #005faf;
   color: #fff;
 }
 
 ::selection {
-  background: #1890ff;
+  background: #005faf;
   color: #fff;
 }
 
@@ -167,8 +167,8 @@ pre {
 
   &:hover {
     svg {
-      color: #00aa72;
-      fill: #90e0c5;
+      color: #1890ff;
+      fill: #80caf9;
     }
   }
 }

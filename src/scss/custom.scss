@@ -71,7 +71,7 @@
         opacity: 0.4;
       }
       &.active::before {
-        background-color: $green;
+        background-color: $blue;
       }
       &.warn::before {
         background-color: $yellow;
