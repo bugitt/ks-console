@@ -1,0 +1,108 @@
+diff --git a/node_modules/@kube-design/components/esm/styles/variables.scss b/node_modules/@kube-design/components/esm/styles/variables.scss
+index 3adb2c3..6f9018a 100644
+--- a/node_modules/@kube-design/components/esm/styles/variables.scss
++++ b/node_modules/@kube-design/components/esm/styles/variables.scss
+@@ -20,10 +20,11 @@ $green-color03: #55bc8a;
+ $green-color04: #479e88;
+ $green-color05: #3b747a;
+ $blue-color01: #c7deef;
+-$blue-color02: #7eb8dc;
++$blue-color02: #80caf9;
+ $blue-color03: #329dce;
+ $blue-color04: #3385b0;
+-$blue-color05: #326e93;
++$blue-color05: #1890ff;
++$blue-color06: #005faf;
+ $red-color01: #fae7e5;
+ $red-color02: #ea8573;
+ $red-color03: #ca2621;
+@@ -52,7 +53,7 @@ $warning: $yellow-color03;
+ $error: $red-color03;
+ $info: $blue-color03;
+ 
+-$primary: $green-color03;
++$primary: $blue-color05;
+ 
+ $border-radius: 4px;
+ 
+@@ -104,9 +105,9 @@ $btn-default-active-border: $light-color07;
+ $btn-default-shadow: none;
+ $btn-default-active-shadow: inset 0 4px 8px 0 rgba(36, 46, 66, 0.12);
+ 
+-$btn-primary-bg: $green-color03;
++$btn-primary-bg: $primary;
+ $btn-primary-text-color: $white;
+-$btn-primary-shadow: 0 8px 16px 0 rgba(85, 188, 138, 0.36);
++$btn-primary-shadow: 0 8px 16px 0 rgba(100, 149, 237, 0.2);
+ $btn-primary-active-shadow: inset 0 4px 8px 0 rgba(35, 45, 65, 0.24);
+ 
+ $btn-control-bg: $dark-color07;
+@@ -154,12 +155,12 @@ $input-default-width: 376px;
+ $input-bg-color: $white;
+ $input-border-color: $light-color08;
+ $input-hover-color: $dark-color01;
+-$input-focus-color: $green-color03;
++$input-focus-color: $primary;
+ $input-error-color: $red-color03;
+ $input-caret-color: $dark-color06;
+ $input-placeholder-color: $dark-color03;
+ $input-disabled-color: $light-color02;
+-$input-focus-shadow: 0 4px 8px 0 rgba(85,188,138,.2);
++$input-focus-shadow: 0 4px 8px 0 rgba(100, 149, 237, 0.2);
+ 
+ $input-search-bg: $bg-color;
+ $input-search-hover-bg: $white;
+diff --git a/node_modules/@kube-design/components/lib/styles/variables.scss b/node_modules/@kube-design/components/lib/styles/variables.scss
+index 3adb2c3..6f9018a 100644
+--- a/node_modules/@kube-design/components/lib/styles/variables.scss
++++ b/node_modules/@kube-design/components/lib/styles/variables.scss
+@@ -20,10 +20,11 @@ $green-color03: #55bc8a;
+ $green-color04: #479e88;
+ $green-color05: #3b747a;
+ $blue-color01: #c7deef;
+-$blue-color02: #7eb8dc;
++$blue-color02: #80caf9;
+ $blue-color03: #329dce;
+ $blue-color04: #3385b0;
+-$blue-color05: #326e93;
++$blue-color05: #1890ff;
++$blue-color06: #005faf;
+ $red-color01: #fae7e5;
+ $red-color02: #ea8573;
+ $red-color03: #ca2621;
+@@ -52,7 +53,7 @@ $warning: $yellow-color03;
+ $error: $red-color03;
+ $info: $blue-color03;
+ 
+-$primary: $green-color03;
++$primary: $blue-color05;
+ 
+ $border-radius: 4px;
+ 
+@@ -104,9 +105,9 @@ $btn-default-active-border: $light-color07;
+ $btn-default-shadow: none;
+ $btn-default-active-shadow: inset 0 4px 8px 0 rgba(36, 46, 66, 0.12);
+ 
+-$btn-primary-bg: $green-color03;
++$btn-primary-bg: $primary;
+ $btn-primary-text-color: $white;
+-$btn-primary-shadow: 0 8px 16px 0 rgba(85, 188, 138, 0.36);
++$btn-primary-shadow: 0 8px 16px 0 rgba(100, 149, 237, 0.2);
+ $btn-primary-active-shadow: inset 0 4px 8px 0 rgba(35, 45, 65, 0.24);
+ 
+ $btn-control-bg: $dark-color07;
+@@ -154,12 +155,12 @@ $input-default-width: 376px;
+ $input-bg-color: $white;
+ $input-border-color: $light-color08;
+ $input-hover-color: $dark-color01;
+-$input-focus-color: $green-color03;
++$input-focus-color: $primary;
+ $input-error-color: $red-color03;
+ $input-caret-color: $dark-color06;
+ $input-placeholder-color: $dark-color03;
+ $input-disabled-color: $light-color02;
+-$input-focus-shadow: 0 4px 8px 0 rgba(85,188,138,.2);
++$input-focus-shadow: 0 4px 8px 0 rgba(100, 149, 237, 0.2);
+ 
+ $input-search-bg: $bg-color;
+ $input-search-hover-bg: $white;
