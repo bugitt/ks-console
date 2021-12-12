@@ -38,7 +38,7 @@ server:
   dockerHubUrl: https://hub.docker.com
 
 client:
-  title: KubeSphere
+  title: 北航软件学院-PaaS平台
   description: ""
 
   version:
