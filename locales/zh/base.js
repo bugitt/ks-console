@@ -326,6 +326,132 @@ module.exports = {
   TOOLBOX_KUBECTL_DESC: '操作多集群的客户端命令行工具',
   PLATFORM_SETTINGS_SELECTOR_DESC: '定制化平台的系统配置',
   FILE_OVERSIZED_TIP: '文件过大，超过 2M 不能上传！',
+  'Load more': '加载更多',
+
+  'Resource List': '资源列表',
+
+  'Platform-level Access Control': '平台级的访问控制',
+
+  NOT_FOUND_DESC:
+    '🙇 对不起没有找到相关资源，系统将在 {time}s 后返回 <a href="{link}">工作台</a>',
+  DETAIL_NOT_FOUND_DESC:
+    '🙇 对不起没有找到相关资源，返回 <a href="{link}">{title}</a>',
+  Toolbox: '工具箱',
+  TOOLBOX_DESC: '提供日志、事件、审计等相关查询工具',
+  'Analysis Tools': '分析工具',
+  'Control Tools': '控制工具',
+  'Third-party Tools': '第三方工具',
+
+  Logging: '日志',
+  logging: '日志',
+  Auditing: '审计',
+  auditing: '审计',
+  'Log Search': '日志查询',
+  LOG_SEARCH_DESC: '针对企业空间、项目、资源等多维度的日志查询工具。',
+  KUBECTL_DESC: '当前集群客户端命令行工具',
+  TOOLBOX_KUBECTL_DESC: '操作多集群的客户端命令行工具',
+
+  KUBECONFIG_DESC: '用于配置当前集群访问信息的文件',
+
+  event: '事件',
+  events: '事件',
+  EVENT_CREATE_DESC: '您可以改变搜索条件重新查询',
+  'Event Search': '事件查询',
+  EVENT_SEARCH_DESC: '针对企业空间、项目、资源等多维度的事件查询工具。',
+  EVENT_DESC: '事件查询（Event）是KubeSphere提供的平台内资源的历史事件查询',
+  'Search By Condition': '根据条件进行查找',
+  'search condition': '搜索条件',
+  'Search tips': '搜索提示',
+  Preferences: '偏好设置',
+  'Data Sources': '数据来源: 内置服务',
+  'Number of events': '事件数量',
+  'workspaces found': '共找到 {count} 个企业空间',
+  'rules text': '如何定义操作审计收集规则？ 🤔',
+  'rules desc':
+    'KubeSphere可以根据您设置的规则进行操作审计的收集，点击查看如何定义规则。',
+  Category: '类别',
+  Resource: '资源',
+  'Earliest start time': '最早发生时间',
+  'Most recent start time': '最近发生时间',
+  'Related resources': '关联资源',
+  'Operation details': '操作详情',
+  'Event metadata': '事件元数据',
+
+  'Auditing Operating': '操作审计',
+  AUDITING_OPERATING_DESC:
+    '针对企业空间、项目、资源等多维度的操作审计查询工具。',
+  verb: '操作行为',
+  'Operation Account': '操作帐户',
+  'Source IP': '来源 IP',
+  Subresource: '子资源',
+  'Status Code': '状态码',
+
+  NanoSeconds: '纳秒',
+  MicroSeconds: '微秒',
+  MilliSeconds: '毫秒',
+  Seconds: '秒',
+  Minutes: '分钟',
+  Hours: '小时',
+  Days: '天',
+
+  unit: '单位',
+  time: '时间',
+  email: '邮件',
+  required: '必填',
+  Successful: '成功',
+  Unknown: '未知',
+  'Not running yet': '未运行',
+  successful: '成功',
+  Tag: '标签',
+  PATTERN_NAME_INVALID_TIP: '名称不合法 （仅支持小写字母、数字、下划线）',
+  'No matching resources found.': '暂时没有找到符合过滤条件的资源',
+  'You can try to': '您可以尝试',
+  'clear filters': '清空过滤条件',
+  CONTENT_NOT_SAVED_TIPS: '内容已经修改但并未保存',
+  SAVE_EDIT_HINTS: '请确认修改的内容是正确的，您可以保存设置或者取消设置。',
+
+  Setting: '设置中',
+  'Not set': '未设置',
+  Finished: '已设置',
+
+  'Learn more': '了解更多',
+
+  KS_DESCRIPTION:
+    'KubeSphere 是一款开源项目，在目前主流容器调度平台 Kubernetes 之上构建的企业级分布式多租户容器管理平台，提供简单易用的操作界面以及向导式操作方式，在降低用户使用容器调度平台学习成本的同时，极大降低开发、测试、运维的日常工作的复杂度。',
+
+  REPS_ADDRESS: '项目地址',
+  ISSUE_FEEDBACK: '问题反馈',
+  PART_IN_DISCUSSION: '参与讨论',
+  CODE_CONTRIBUTE: '贡献代码',
+  GITHUB_STAR: '点亮Star',
+
+  CONDITION_STATUS_ANALYSE: '状态分析(Conditions)',
+
+  NAV_PROJECTS: '项目管理',
+  NAV_ACCOUNTS: '帐户管理',
+
+  'Session timeout or this account is logged in elsewhere, please login again':
+    '会话超时或此帐户在其它地方登录，请重新登录',
+
+  ALERT_WARNING: '请注意',
+
+  VolumeSnapshot: '存储卷快照',
+  'Volume Snapshot': '存储卷快照',
+
+  CREATE_STATUS_SUCCESS: '创建成功',
+  CREATE_STATUS_UPDATING: '创建中',
+  CREATE_STATUS_FAILED: '创建失败',
+  CREATE_STATUS_DELETING: '删除中',
+
+  DATA_SOURCE: '数据源',
+
+  EMPTY_WRAPPER: '未发现 {resource}',
+
+  'User Guides': '用户指南',
+  'Quick Support': '快速获取帮助',
+  'Developer Community': '开发者社区',
+  NO_HISTORY_TITLE: '浏览器暂未收录到您对集群或者企业空间等区域的访问记录',
+  NO_HISTORY_DESC: '您可以尝试对企业空间或者集群、项目等资源的访问',
   USER_GUIDES_DESC: '最详尽的 KubeSphere 用户指南文档',
   DEVELOPER_DESC: '通过在开发者社区提出问题获得帮助',
   API_DOCS_DESC: '最详尽的 KubeSphere API 文档',
@@ -333,5 +459,7 @@ module.exports = {
   // Workbench
   // Container Details Page
   CPU_VALUE: 'CPU：{value}',
-  MEMORY_VALUE: '内存：{value}'
+  MEMORY_VALUE: '内存：{value}',
+  KS_DESCRIPTION:
+    '北航软院PaaS平台 是一个基于 KubeSphere 的DevOps平台，在目前主流容器调度平台 Kubernetes 之上构建的企业级分布式多租户容器管理平台，提供简单易用的操作界面以及向导式操作方式，在降低用户使用容器调度平台学习成本的同时，极大降低开发、测试、运维的日常工作的复杂度。',
 };
