@@ -524,7 +524,7 @@ client:
     service.beta.kubernetes.io/qingcloud-load-balancer-type: "0"
 
   # control error notify on page
-  enableErrorNotify: true
+  enableErrorNotify: false
 
   # enable image search when add image for a container
   enableImageSearch: true
