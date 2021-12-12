@@ -69,8 +69,6 @@ const handleLogin = async ctx => {
       }
       params.password = decryptPassword(params.encrypt, 'kubesphere')
     }
-    // eslint-disable-next-line no-console
-    console.log(params)
     user = await login(params, { 'x-client-ip': ctx.request.ip }, cloudLogin)
     if (!user) {
       Object.assign(error, {

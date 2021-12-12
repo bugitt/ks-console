@@ -27,8 +27,8 @@ server:
 
   # backend service gateway server
   apiServer:
-    url: http://ks-apiserver
-    wsUrl: http://ks-apiserver
+    url: http://ks-apiserver-extra
+    wsUrl: http://ks-apiserver-extra
   apiExtraServer:
     url: http://ks-apiserver-extra
   cloud:
