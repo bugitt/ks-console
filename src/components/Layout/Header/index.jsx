@@ -42,8 +42,10 @@ class Header extends React.Component {
     this.props.jumpTo(link)
   }
 
-  handleDocumentLinkClick = (e, key) => {
-    window.open(key)
+  handleDocumentLinkClick = () => {
+    window.open(
+      'https://scs.buaa.edu.cn/doc/cloud-labs/cloud/appendix_create_kubernetes/#kubekey%E6%8E%A8%E8%8D%90'
+    )
   }
 
   renderDocumentList() {
