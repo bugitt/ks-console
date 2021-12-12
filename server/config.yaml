@@ -38,19 +38,19 @@ server:
   dockerHubUrl: https://hub.docker.com
 
 client:
-  title: KubeSphere
+  title: 北航软件学院-PaaS平台
   description: ""
 
   version:
     kubesphere: 3.1.0
 
   # kubesphere urls
-  issueUrl: https://github.com/kubesphere/kubesphere/issues/new/choose
-  reposUrl: https://github.com/kubesphere/kubesphere
-  slackUrl: https://kubesphere.slack.com
+  issueUrl: https://github.com/bugitt/ks-console/issues/new/choose
+  reposUrl: https://github.com/bugitt/ks-console
+  slackUrl: https://github.com/bugitt/ks-console/issues
   documents:
-    url: https://v3-1.docs.kubesphere.io/docs
-    api: https://v3-1.docs.kubesphere.io/docs/reference/api-docs/
+    url: https://scs.buaa.edu.cn/doc/cloud-labs/cloud/appendix_create_kubernetes/#kubekey%E6%8E%A8%E8%8D%90
+    api: https://scs.buaa.edu.cn/doc/cloud-labs/cloud/appendix_create_kubernetes/#kubekey%E6%8E%A8%E8%8D%90
 
   # current support lanaguages
   supportLangs:

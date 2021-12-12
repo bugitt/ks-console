@@ -6,7 +6,7 @@
   margin-bottom: 20px;
   padding: 12px;
   border-radius: $border-radius;
-  background-color: #242e42;
+  background-color: $blue-color06;
   box-shadow: 0 8px 16px 0 rgba(36, 46, 66, 0.2);
   cursor: pointer;
 
@@ -57,7 +57,7 @@
 }
 
 .dropdown {
-  background-color: #242e42;
+  background-color: $blue-color06;
 
   :global {
     .dropdown-content {
