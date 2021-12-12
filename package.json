@@ -84,7 +84,7 @@
     "test:e2e": "cypress run",
     "serve": "NODE_ENV=production node server/server.js",
     "lint": "eslint src/**/*.jsx src/**/*.js",
-    "postinstall": "rimraf node_modules/.cache",
+    "postinstall": "patch-package && rimraf node_modules/.cache",
     "prebuild": "rimraf dist",
     "release": "standard-version"
   },
@@ -159,6 +159,7 @@
     "node-sass": "^4.13.1",
     "nodemon": "^1.15.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "patch-package": "^6.4.7",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.14.2",
