@@ -64,7 +64,7 @@ class Header extends React.Component {
 
   render() {
     const { className, innerRef, location } = this.props
-    const logo = globals.config.logo || '/assets/logo-dark.svg'
+    const logo = globals.config.logo || '/assets/login-logo.svg'
 
     return (
       <div
@@ -80,7 +80,7 @@ class Header extends React.Component {
         <Link to={isAppsPage() && !globals.user ? '/apps' : '/'}>
           <img
             className={styles.logo}
-            src={isAppsPage() ? `/assets/logo-dark.svg` : logo}
+            src={isAppsPage() ? `/assets/login-logo.svg` : logo}
             alt=""
           />
         </Link>
