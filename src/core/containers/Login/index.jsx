@@ -147,13 +147,13 @@ export default class Login extends Component {
                 },
               ]}
             >
-              <Input name="username" placeholder="User@example.com" />
+              <Input name="username" placeholder="学号/教工号/用户名" />
             </Form.Item>
             <Form.Item
               label={t('Password')}
               rules={[{ required: true, message: t('Please input password') }]}
             >
-              <InputPassword name="password" placeholder="Password" />
+              <InputPassword name="password" placeholder="密码" />
             </Form.Item>
             <div className={styles.footer}>
               <Button type="control" htmlType="submit" loading={isSubmmiting}>

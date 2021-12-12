@@ -83,7 +83,7 @@ export default class PasswordConfirm extends Component {
     const { formData, password } = this.state
 
     return (
-      <div>
+      <div className={styles.cover}>
         <a href="#" className={styles.logo}>
           <img src="/assets/logo.svg" alt="" />
         </a>

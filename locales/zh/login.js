@@ -19,7 +19,7 @@
 module.exports = {
   'Log In': '登录',
   'Please Log In': '欢迎登录',
-  'Username or Email': '用户名或者邮箱',
+  'Username or Email': '学工号',
   Password: '密码',
   Captcha: '验证码',
   'User does not exist': '用户名不存在',
@@ -38,7 +38,7 @@ module.exports = {
     '登录失败次数过多，请稍后重试',
   'Log In with {title}': '通过 {title} 登录',
 
-  'Please input username or email': '请输入用户名或邮箱',
+  'Please input username or email': '请输入学工号',
   'Please input password': '请输入密码',
   'Please input captch': '请输入验证码',
   'Please confirm your account info': '请确认您的帐户信息',
