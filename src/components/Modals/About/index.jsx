@@ -35,7 +35,10 @@ export default class AboutModal extends Component {
   }
 
   render() {
-    const { issueUrl, reposUrl, version, slackUrl } = globals.config
+    const { version } = globals.config
+    const issueUrl = 'https://github.com/bugitt/ks-console/issues/new/choose'
+    const reposUrl = 'https://github.com/bugitt/ks-console'
+    const slackUrl = 'https://github.com/bugitt/ks-console/issues'
     return (
       <Modal
         bodyClassName={styles.body}
@@ -46,7 +49,7 @@ export default class AboutModal extends Component {
       >
         <div className={styles.describtion}>
           <div>
-            <img src="/assets/logo.svg" alt="" />
+            <img src="/assets/logo-dark.svg" alt="" />
           </div>
           <p>{t('KS_DESCRIPTION')}</p>
           <strong>
