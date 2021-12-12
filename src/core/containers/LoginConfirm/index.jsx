@@ -68,7 +68,7 @@ export default class LoginConfirm extends Component {
     const { formData, errorMessage } = this.state
 
     return (
-      <div>
+      <div className={styles.cover}>
         <a href="/" className={styles.logo}>
           <img src="/assets/logo.svg" alt="" />
         </a>
@@ -116,7 +116,7 @@ export default class LoginConfirm extends Component {
             >
               <Input
                 name="username"
-                placeholder="user@example.com"
+                placeholder="学号/教工号/用户名"
                 defaultValue={get(globals, 'user.username')}
                 maxLength={32}
               />

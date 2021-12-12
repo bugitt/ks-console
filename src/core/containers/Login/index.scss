@@ -2,28 +2,30 @@
 @import '~scss/mixins';
 
 .cover {
+  width: 100%;
+  height: 100vh;
   background-size: cover;
-  background-image: url(/src/assets/cover.jpeg);
+  background-image: url(/assets/cover.jpeg);
 }
 
 .logo {
-  position: absolute;
+  position: relative;
   top: 80px;
-  left: calc(50% - 180px);
+  left: calc(50% - 160px);
   width: 320px;
   transform: translateX(-50%);
 }
 
 .logo img {
   left: 0;
-  width: 180px;
-  height: 32px;
+  width: 198px;
+  height: 40px;
 }
 
 .login {
   position: relative;
   width: 320px;
-  margin: 140px auto 40px;
+  margin: 100px auto 40px;
   padding: 20px;
   background-color: #fff;
   border-radius: 4px;
@@ -37,6 +39,11 @@
 
     input.input {
       height: 36px;
+    }
+
+    input.input:not([readonly]):not([disabled]):focus {
+      border-color: $border-focus-color;
+      box-shadow: 0 4px 8px 0 rgba(100, 149, 237, 0.2);
     }
   }
 }
