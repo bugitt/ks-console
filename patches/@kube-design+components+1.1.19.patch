@@ -1,5 +1,5 @@
 diff --git a/node_modules/@kube-design/components/esm/styles/variables.scss b/node_modules/@kube-design/components/esm/styles/variables.scss
-index 3adb2c3..6f9018a 100644
+index 3adb2c3..81a9aff 100644
 --- a/node_modules/@kube-design/components/esm/styles/variables.scss
 +++ b/node_modules/@kube-design/components/esm/styles/variables.scss
 @@ -20,10 +20,11 @@ $green-color03: #55bc8a;
@@ -25,7 +25,7 @@ index 3adb2c3..6f9018a 100644
  
  $border-radius: 4px;
  
-@@ -104,9 +105,9 @@ $btn-default-active-border: $light-color07;
+@@ -104,14 +105,14 @@ $btn-default-active-border: $light-color07;
  $btn-default-shadow: none;
  $btn-default-active-shadow: inset 0 4px 8px 0 rgba(36, 46, 66, 0.12);
  
@@ -36,7 +36,14 @@ index 3adb2c3..6f9018a 100644
 +$btn-primary-shadow: 0 8px 16px 0 rgba(100, 149, 237, 0.2);
  $btn-primary-active-shadow: inset 0 4px 8px 0 rgba(35, 45, 65, 0.24);
  
- $btn-control-bg: $dark-color07;
+-$btn-control-bg: $dark-color07;
++$btn-control-bg: $blue-color06;
+ $btn-control-text-color: $white;
+-$btn-control-shadow: 0 8px 16px 0 rgba(35, 45, 65, 0.28);
++$btn-control-shadow: 0 8px 16px 0 rgba(100, 149, 237, 0.2);
+ $btn-control-active-shadow: inset 0 4px 8px 0 rgba(36, 46, 66, 0.28);
+ 
+ $btn-danger-bg: $red-color03;
 @@ -154,12 +155,12 @@ $input-default-width: 376px;
  $input-bg-color: $white;
  $input-border-color: $light-color08;
@@ -53,7 +60,7 @@ index 3adb2c3..6f9018a 100644
  $input-search-bg: $bg-color;
  $input-search-hover-bg: $white;
 diff --git a/node_modules/@kube-design/components/lib/styles/variables.scss b/node_modules/@kube-design/components/lib/styles/variables.scss
-index 3adb2c3..6f9018a 100644
+index 3adb2c3..81a9aff 100644
 --- a/node_modules/@kube-design/components/lib/styles/variables.scss
 +++ b/node_modules/@kube-design/components/lib/styles/variables.scss
 @@ -20,10 +20,11 @@ $green-color03: #55bc8a;
@@ -79,7 +86,7 @@ index 3adb2c3..6f9018a 100644
  
  $border-radius: 4px;
  
-@@ -104,9 +105,9 @@ $btn-default-active-border: $light-color07;
+@@ -104,14 +105,14 @@ $btn-default-active-border: $light-color07;
  $btn-default-shadow: none;
  $btn-default-active-shadow: inset 0 4px 8px 0 rgba(36, 46, 66, 0.12);
  
@@ -90,7 +97,14 @@ index 3adb2c3..6f9018a 100644
 +$btn-primary-shadow: 0 8px 16px 0 rgba(100, 149, 237, 0.2);
  $btn-primary-active-shadow: inset 0 4px 8px 0 rgba(35, 45, 65, 0.24);
  
- $btn-control-bg: $dark-color07;
+-$btn-control-bg: $dark-color07;
++$btn-control-bg: $blue-color06;
+ $btn-control-text-color: $white;
+-$btn-control-shadow: 0 8px 16px 0 rgba(35, 45, 65, 0.28);
++$btn-control-shadow: 0 8px 16px 0 rgba(100, 149, 237, 0.2);
+ $btn-control-active-shadow: inset 0 4px 8px 0 rgba(36, 46, 66, 0.28);
+ 
+ $btn-danger-bg: $red-color03;
 @@ -154,12 +155,12 @@ $input-default-width: 376px;
  $input-bg-color: $white;
  $input-border-color: $light-color08;
