@@ -52,7 +52,7 @@ const handleLoginResp = (resp = {}) => {
   }
 }
 
-const login = async (data, headers, cloudLogin) => {
+const login = async (data, headers) => {
   let clientID = serverConfig.apiServer.clientID
   if (!clientID) {
     clientID = 'kubesphere'
@@ -75,9 +75,8 @@ const login = async (data, headers, cloudLogin) => {
     },
     params: {
       ...data,
-      grant_type: cloudLogin ? 'cloud_login' : 'password',
+      grant_type: 'password',
     },
-    isExtra: !!cloudLogin,
   })
 
   return handleLoginResp(resp)

@@ -35,7 +35,24 @@ const {
 const { send_gateway_request } = require('../libs/request')
 
 const handleLogin = async ctx => {
+  let params = ctx.request.body
+
   const cloudLogin = !!ctx.query.authorization
+
+  if (cloudLogin) {
+    const auth = await getCloudAuthentication(ctx.query.authorization)
+    if (isEmpty(auth) || !auth.id || !auth.token) {
+      Object.assign(error, {
+        status: 400,
+        reason: 'Invalid auth info from cloud-platform',
+        message: 'Invalid auth info from cloud-platform',
+      })
+    }
+    params = {
+      username: auth.id,
+      encrypt: process.env.KS_DEFAULT_PASSWORD,
+    }
+  }
 
   let referer = ctx.cookies.get('referer')
   referer = referer ? decodeURIComponent(referer) : ''
@@ -43,78 +60,66 @@ const handleLogin = async ctx => {
   const error = {}
   let user = null
 
-  try {
-    let params = {}
-    if (cloudLogin) {
-      const auth = await getCloudAuthentication(ctx.query.authorization)
-      if (isEmpty(auth) || !auth.id || !auth.token) {
-        Object.assign(error, {
-          status: 400,
-          reason: 'Invalid auth info from cloud-platform',
-          message: 'Invalid auth info from cloud-platform',
-        })
-      }
-      params = {
-        student_id: auth.id,
-        token: auth.token,
-      }
-    } else {
-      params = ctx.request.body
-      if (isEmpty(params) || !params.username || !params.encrypt) {
-        Object.assign(error, {
-          status: 400,
-          reason: 'Invalid Login Params',
-          message: 'invalid login params',
-        })
-      }
+  if (isEmpty(params) || !params.username || !params.encrypt) {
+    Object.assign(error, {
+      status: 400,
+      reason: 'Invalid Login Params',
+      message: 'invalid login params',
+    })
+  }
+
+  if (isEmpty(error)) {
+    try {
       params.password = decryptPassword(params.encrypt, 'kubesphere')
-    }
-    user = await login(params, { 'x-client-ip': ctx.request.ip }, cloudLogin)
-    if (!user) {
-      Object.assign(error, {
-        status: 400,
-        reason: 'Internal Server Error',
-        message: 'Wrong username or password, please try again',
-      })
-    }
-  } catch (err) {
-    ctx.app.emit('error', err)
-    switch (err.code) {
-      case 400:
-      case 401:
+
+      user = await login(params, { 'x-client-ip': ctx.request.ip })
+      if (!user) {
         Object.assign(error, {
-          status: err.code,
-          reason: 'User Not Match',
+          status: 400,
+          reason: 'Internal Server Error',
           message: 'Wrong username or password, please try again',
         })
-        break
-      case 429:
-        Object.assign(error, {
-          status: err.code,
-          reason: 'Too Many Requests',
-          message: 'Too many failed login attempts, please wait!',
-        })
-        break
-      case 502:
-        Object.assign(error, {
-          status: err.code,
-          reason: 'Internal Server Error',
-          message: 'Unable to access the backend services',
-        })
-        break
-      case 'ETIMEDOUT':
-        Object.assign(error, {
-          status: 400,
-          reason: 'Internal Server Error',
-          message: 'Unable to access the api server',
-        })
-        break
-      default:
-        Object.assign(error, {
-          status: err.code,
-          reason: err.statusText,
-          message: err.message,
-        })
+      }
+    } catch (err) {
+      ctx.app.emit('error', err)
+
+      switch (err.code) {
+        case 400:
+        case 401:
+          Object.assign(error, {
+            status: err.code,
+            reason: 'User Not Match',
+            message: 'Wrong username or password, please try again',
+          })
+          break
+        case 429:
+          Object.assign(error, {
+            status: err.code,
+            reason: 'Too Many Requests',
+            message: 'Too many failed login attempts, please wait!',
+          })
+          break
+        case 502:
+          Object.assign(error, {
+            status: err.code,
+            reason: 'Internal Server Error',
+            message: 'Unable to access the backend services',
+          })
+          break
+        case 'ETIMEDOUT':
+          Object.assign(error, {
+            status: 400,
+            reason: 'Internal Server Error',
+            message: 'Unable to access the api server',
+          })
+          break
+        default:
+          Object.assign(error, {
+            status: err.code,
+            reason: err.statusText,
+            message: err.message,
+          })
+      }
     }
   }
 
@@ -122,7 +127,6 @@ const handleLogin = async ctx => {
     ctx.body = error
     if (cloudLogin) {
       ctx.redirect('/login?cloud-login-error=true')
-      // ctx.redirect(`https://git.scs.buaa.edu.cn/sign_up?alert=true&referer=${ctx.request.url}&token=${ctx.query.authorization}`)
       return
     }
     return

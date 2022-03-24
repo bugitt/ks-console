@@ -30,8 +30,6 @@ server:
     clientSecret: kubesphere
     url: http://ks-apiserver
     wsUrl: ws://ks-apiserver
-  apiExtraServer:
-    url: http://ks-apiserver-extra
   cloud:
     baseUrl: https://scs.buaa.edu.cn/api/v2
 
