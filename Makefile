@@ -22,10 +22,10 @@ serve:	## Run console on port :8000
 	npm run serve
 
 container:	## Build the container image
-	DRY_RUN=true hack/docker_build.sh
+	DRY_RUN=true REPO=kubesphere REGISTRY=harbor.scs.buaa.edu.cn hack/docker_build.sh
 
 container-push:	## Build the container and push
-	hack/docker_build.sh
+	REPO=kubesphere REGISTRY=harbor.scs.buaa.edu.cn hack/docker_build.sh
 
 container-cross:	## Build the container for multiple platforms(currently linux/amd64,linux/arm64)
 	DRY_RUN=true hack/docker_build_multiarch.sh
