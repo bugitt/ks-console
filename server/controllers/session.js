@@ -38,6 +38,7 @@ const handleLogin = async ctx => {
   let params = ctx.request.body
 
   const cloudLogin = !!ctx.query.authorization
+  const error = {}
 
   if (cloudLogin) {
     const auth = await getCloudAuthentication(ctx.query.authorization)
@@ -57,7 +58,6 @@ const handleLogin = async ctx => {
   let referer = ctx.cookies.get('referer')
   referer = referer ? decodeURIComponent(referer) : ''
 
-  const error = {}
   let user = null
 
   if (isEmpty(params) || !params.username || !params.encrypt) {
