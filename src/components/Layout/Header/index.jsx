@@ -20,10 +20,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import { Link } from 'react-router-dom'
-import { Button, Icon, Menu, Dropdown } from '@kube-design/components'
-import { isAppsPage, getWebsiteUrl } from 'utils'
-
-import LoginInfo from '../LoginInfo'
+import { Button } from '@kube-design/components'
+import { isAppsPage } from 'utils'
 
 import styles from './index.scss'
 
@@ -40,26 +38,6 @@ class Header extends React.Component {
 
   handleLinkClick = link => () => {
     this.props.jumpTo(link)
-  }
-
-  handleDocumentLinkClick = () => {
-    window.open(
-      'https://scs.buaa.edu.cn/doc/cloud-labs/cloud/appendix_create_kubernetes/#kubekey%E6%8E%A8%E8%8D%90'
-    )
-  }
-
-  renderDocumentList() {
-    const { url, api } = getWebsiteUrl()
-    return (
-      <Menu onClick={this.handleDocumentLinkClick} data-test="header-docs">
-        <Menu.MenuItem key={url}>
-          <Icon name="hammer" /> {t('User Manual')}
-        </Menu.MenuItem>
-        <Menu.MenuItem key={api}>
-          <Icon name="api" /> {t('API Documents')}
-        </Menu.MenuItem>
-      </Menu>
-    )
   }
 
   render() {
@@ -120,14 +98,6 @@ class Header extends React.Component {
             </Button>
           </div>
         )}
-        <div className={styles.right}>
-          {this.isLoggedIn && (
-            <Dropdown content={this.renderDocumentList()}>
-              <Button type="flat" icon="documentation" />
-            </Dropdown>
-          )}
-          <LoginInfo className={styles.loginInfo} isAppsPage={isAppsPage()} />
-        </div>
       </div>
     )
   }
