@@ -32,3 +32,6 @@ container-cross:	## Build the container for multiple platforms(currently linux/a
 
 container-cross-push:	## Build the container for multiple platforms and push
 	hack/docker_build_multiarch.sh
+
+deploy: container-push
+	sed -e "s|IMAGE_TAG|${TAG}|g" ks-console-replace.yaml | kubectl apply -f -

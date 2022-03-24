@@ -9,7 +9,7 @@ metadata:
   namespace: kubesphere-system
 spec:
   progressDeadlineSeconds: 600
-  replicas: 1
+  replicas: 3
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -50,7 +50,7 @@ spec:
                 - kubesphere-system
               topologyKey: kubernetes.io/hostname
       containers:
-        - image: harbor.scs.buaa.edu.cn/kubesphere/ks-console-replace:test
+        - image: harbor.scs.buaa.edu.cn/kubesphere/ks-console-replace:IMAGE_TAG
           imagePullPolicy: Always
           livenessProbe:
             failureThreshold: 8

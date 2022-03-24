@@ -15,7 +15,7 @@ CONTAINER_BUILDER=${CONTAINER_BUILDER:-"build"}
 # shellcheck disable=SC2086 # inteneded splitting of CONTAINER_BUILDER
 ${CONTAINER_CLI} ${CONTAINER_BUILDER} \
   -f build/Dockerfile \
-  -t "${REGISTRY}/${REPO}"/ks-console:"${TAG}" .
+  -t "${REGISTRY}/${REPO}"/ks-console-replace:"${TAG}" .
 
 # If set, just building, no pushing
 if [[ -z "${DRY_RUN:-}" ]]; then
