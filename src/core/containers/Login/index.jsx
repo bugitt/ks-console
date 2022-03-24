@@ -20,13 +20,7 @@ import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import cookie from 'utils/cookie'
 
-import {
-  Alert,
-  Button,
-  Form,
-  Input,
-  InputPassword,
-} from '@kube-design/components'
+import { Alert, Button } from '@kube-design/components'
 
 import { get } from 'lodash'
 
@@ -100,7 +94,7 @@ export default class Login extends Component {
   }
 
   render() {
-    const { formData, isSubmmiting, errorMessage } = this.state
+    const { errorMessage } = this.state
 
     const cloudLoginError = new URLSearchParams(window.location.search).get(
       'cloud-login-error'
@@ -137,30 +131,6 @@ export default class Login extends Component {
               message={t(errMsg)}
             />
           )}
-          <Form data={formData} onSubmit={this.handleSubmit}>
-            <Form.Item
-              label={t('USERNAME_OR_EMAIL')}
-              rules={[
-                {
-                  required: true,
-                  message: t('INPUT_USERNAME_OR_EMAIL_TIP'),
-                },
-              ]}
-            >
-              <Input name="username" placeholder="学号/教工号/用户名" />
-            </Form.Item>
-            <Form.Item
-              label={t('PASSWORD')}
-              rules={[{ required: true, message: t('PASSWORD_EMPTY_DESC') }]}
-            >
-              <InputPassword name="password" placeholder="密码" />
-            </Form.Item>
-            <div className={styles.footer}>
-              <Button type="control" htmlType="submit" loading={isSubmmiting}>
-                {t('LOG_IN')}
-              </Button>
-            </div>
-          </Form>
           <div className={styles.footer}>
             <Button
               type="control"
