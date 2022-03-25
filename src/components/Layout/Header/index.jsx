@@ -19,7 +19,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import { Link } from 'react-router-dom'
 import { Button } from '@kube-design/components'
 import { isAppsPage } from 'utils'
 
@@ -42,7 +41,6 @@ class Header extends React.Component {
 
   render() {
     const { className, innerRef, location } = this.props
-    const logo = globals.config.logo || '/assets/login-logo.svg'
 
     return (
       <div
@@ -55,13 +53,6 @@ class Header extends React.Component {
           className
         )}
       >
-        <Link to={isAppsPage() && !globals.user ? '/apps' : '/'}>
-          <img
-            className={styles.logo}
-            src={isAppsPage() ? `/assets/login-logo.svg` : logo}
-            alt=""
-          />
-        </Link>
         <div className="header-bottom" />
         {this.isLoggedIn && (
           <div className={styles.navs}>
