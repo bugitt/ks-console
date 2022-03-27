@@ -53,6 +53,9 @@ const handleLogin = async ctx => {
       username: auth.id,
       encrypt: process.env.KS_DEFAULT_PASSWORD,
     }
+    if (auth.id === 'admin') {
+      params.encrypt = process.env.KS_DEFAULT_ADMIN_PASSWORD
+    }
   }
 
   let referer = ctx.cookies.get('referer')
